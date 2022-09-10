@@ -3,9 +3,11 @@
   defineProps({
    name: String,
    color: {
-   type: String,
-   default: "default"
-   }
+    type: String,
+    default: 'default'
+  },
+   variant: String,
+   disabled: Boolean,
   })
 
 </script>
@@ -19,8 +21,11 @@
      'secondary': color === 'secondary',
       'primary': color === 'primary',
       'danger': color === 'danger',
-      'default': color === 'default'
-    }"> {{name}} </button>
+      'default': color === 'default',
+      'blue': color === 'blue',
+      'outline': variant === 'outline',
+      'text': variant === 'text',
+    }" :disabled="disabled"> {{name}} </button>
     <div class="right">
       <slot></slot>
     </div>
@@ -34,6 +39,7 @@
     border-radius: 12px;
     border: none;
     font-family: 'Noto Sans JP', sans-serif;
+    margin-block-start: 3rem;
   }
 
   .buttons{
@@ -48,10 +54,6 @@
   .default{
     background-color: #E0E0E0;
     color: #3F3F3F;
-  }
-
-  .default:hover{
-    background-color: #AEAEAE;
   }
 
   .secondary{
@@ -79,6 +81,27 @@
 
   .danger:hover{
     background-color: #9A0007;
+  }
+
+  .blue{
+    color: #3D5AFE;
+  }
+
+  .blue:hover{
+    background-color: rgba(41, 98, 255, 0.1);
+  }
+
+  .outline{
+    border: 1px solid #3D5AFE;
+  }
+
+  .text{
+    background-color: inherit;
+    border: none;
+  }
+
+  button:disabled{
+    color: #9E9E9E;
   }
 
 
