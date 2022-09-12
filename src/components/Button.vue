@@ -2,12 +2,10 @@
 
   defineProps({
    name: String,
-   color: {
-    type: String,
-    default: 'default'
-  },
+   color: String,
    variant: String,
    disabled: Boolean,
+   size: String
   })
 
 </script>
@@ -25,9 +23,12 @@
       'blue': color === 'blue',
       'outline': variant === 'outline',
       'text': variant === 'text',
+      'sm': size === 'sm',
+      'md': size === 'md',
+      'lg': size === 'lg'
     }" :disabled="disabled"> {{name}} </button>
-    <div class="right">
-      <slot></slot>
+    <div class="right" v-if="$slots.right">
+      <slot name="right"></slot>
     </div>
   </div>
 </template>
@@ -35,11 +36,14 @@
 <style scoped>
 
   button{
-    padding: 10px 20px;
+    inline-size: 105px;
+    padding: 10px 0;
     border-radius: 12px;
+    background-color: #E0E0E0;
+    color: #3F3F3F;
     border: none;
     font-family: 'Noto Sans JP', sans-serif;
-    margin-block-start: 3rem;
+    margin-block-end: 5rem;
   }
 
   .buttons{
@@ -48,12 +52,25 @@
 
   .left{
     position: absolute;
-    left: 20px;
+    left: 7px;
+    bottom: 6px;
+    padding-inline-end: 10px;
+  }
+
+  .right{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    padding-inline-start: 10px;
   }
 
   .default{
     background-color: #E0E0E0;
     color: #3F3F3F;
+  }
+
+  .default:hover{
+    background-color: #AEAEAE;
   }
 
   .secondary{
@@ -102,6 +119,18 @@
 
   button:disabled{
     color: #9E9E9E;
+  }
+
+  .sm{
+    inline-size: 73px;
+  }
+
+  .md{
+    inline-size: 81px;
+  }
+
+  .lg{
+    inline-size: 93px;
   }
 
 

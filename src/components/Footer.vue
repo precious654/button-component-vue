@@ -9,7 +9,6 @@
     color: #A9A9A9;
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
-    margin-block-start: 2rem;
   }
 
   footer a{
