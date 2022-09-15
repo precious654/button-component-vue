@@ -5,7 +5,7 @@
 
 <template>
   <div class="app">
-    <Button name="Default" />
+    <Button name="Default" color='default' />
     <Button name="Default" variant="outline" color="blue" />
     <Button name="Default" variant="text" color="blue" />
     <Button name="Default" :disabled=true />
@@ -33,9 +33,9 @@
 
     <div class='bottom-buttons'>
       <Button name="Default" color="default" />
+      <Button name="Default" color="primary" />
       <Button name="Secondary" color="secondary" />
       <Button name="Danger" color="danger" />
-      <Button name="Primary" color="primary" />
     </div>
 
     <Footer />

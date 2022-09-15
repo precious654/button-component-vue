@@ -46,6 +46,10 @@
     margin-block-end: 5rem;
   }
 
+  button:disabled{
+    color: #9E9E9E;
+  }
+
   .buttons{
     position: relative;
   }
@@ -115,10 +119,6 @@
   .text{
     background-color: inherit;
     border: none;
-  }
-
-  button:disabled{
-    color: #9E9E9E;
   }
 
   .sm{
